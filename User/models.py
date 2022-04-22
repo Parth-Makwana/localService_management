@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 class customer(models.Model):
@@ -23,3 +24,13 @@ class serviceprovider(models.Model):
 
     class Meta():
         db_table='service_provider'
+
+class Customeruser(AbstractUser):
+    pass
+
+    class Meta():
+        db_table='customer_user'
+def __str__(self):
+    return self.username
+
+    

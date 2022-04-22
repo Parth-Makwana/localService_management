@@ -1,36 +1,12 @@
 
 {% load static %}
-
-<!--  
+{% block content %}
+{% load static  %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    
-</head>
-<body>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="Submit" value="Submit" >
 
-
-        Already have an Account?
-        <input type="Submit" value="Sign Up">
-
-        
-    </form>
-</body>
-</html>
-  -->
-
-
-
-
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Design by foolishdeveloper.com -->
-    <title>Glassmorphism login Form Tutorial in html css</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'%}">
@@ -47,17 +23,9 @@
 body{
     background-color: #124563;
 }
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
 
 form{
-    height: 520px;
+    height: 500px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -119,9 +87,12 @@ button{
 
     </style>
 </head>
+
+
 <body>
     
-    <form>
+    
+    <form >
         <h3>Register</h3>
 
         <label for="username">Username</label>
@@ -133,15 +104,14 @@ button{
         <label for="password">Password Confirmation</label>
         <input type="password" placeholder="Password" id="password">
 
-        <button>Sign Up</button>
-
-        <small class="text-muted">Already have an account?<a href="user_login.html">Sign in</a>
-        </small>
+        <button>Sign Up</button><br>
+        
+         <p>Already have an account?<a href="{% url 'user_urls:login'%}">Login in</p>
+        
     </form>
 </body>
 </html>
-<!-- partial -->
   
 </body>
 </html>
-
+{% endblock content %}
